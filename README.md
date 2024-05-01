@@ -130,7 +130,7 @@ Para rodar o projeto na sua máquina, siga os seguintes passos:
 - Clone o repositório
 
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/mr-reinaldo/Curso-FastAPI-Avancado-Projeto01.git
 ```
 
 - Instale as dependências
