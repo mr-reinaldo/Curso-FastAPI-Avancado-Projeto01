@@ -23,14 +23,9 @@ async def async_converter_endpoint(
     to_currencies = body.to_currencies
     price = body.price
 
-    coroutines = []
+    tasks = [
+        async_converter(from_currency, to_currency, price)
+        for to_currency in to_currencies
+    ]
 
-    for currency in to_currencies:
-        cor = async_converter(
-            from_currency=from_currency, to_currency=currency, price=price
-        )
-        coroutines.append(cor)
-
-    result = await gather(*coroutines)
-
-    return result
+    return await gather(*tasks)

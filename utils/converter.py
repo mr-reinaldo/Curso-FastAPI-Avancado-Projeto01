@@ -52,8 +52,6 @@ async def async_converter(from_currency: str, to_currency: str, price: float):
         data.get(f"{from_currency}{to_currency}").get("bid")
     )  # bid é o valor de compra
 
-    print(ask_bid)
-
     return {
         "from_currency": from_currency,
         "to_currency": to_currency,
